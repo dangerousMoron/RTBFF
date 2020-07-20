@@ -60,13 +60,16 @@ class mainWindow(QMainWindow):
         
         openFolderButton = QPushButton('Open Data Directory')
         openFolderButton.setToolTip('Opens the folder on your machine where we are downloading things!')
+        
+        clear_url_button = QPushButton('Clear')
+        clear_url_button.setToolTip('clear the current url')
 
         mainLayout = QVBoxLayout()      
         
         urlLayout = QHBoxLayout()
         # urlLayout.addWidget(urlLabel)
         urlLayout.addWidget(self.urlLine)
-        # urlLayout.addWidget(urlButton)
+        urlLayout.addWidget(clear_url_button)
         
         buttonLayout = QHBoxLayout()
         buttonLayout.addWidget(urlButton)
@@ -114,6 +117,7 @@ class mainWindow(QMainWindow):
         viewButton.clicked.connect(self.fetch_and_open_in_browsah)
         deleteButton.clicked.connect(self.delete_local_data)
         openFolderButton.clicked.connect(self.open_folder)
+        clear_url_button.clicked.connect(self.clear_url)
 
         
     def initial_setup(self):
@@ -135,7 +139,10 @@ class mainWindow(QMainWindow):
             else:
                 # pass
                 self.statusBar.showMessage('Using GNU wget')
-                
+    
+    
+    def clear_url(self):
+        self.urlLine.setText('')
                 
     def setup_directories(self):
         data_dir = self.data_dir
