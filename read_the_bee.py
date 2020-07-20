@@ -223,6 +223,7 @@ class mainWindow(QMainWindow):
         if(self.urlLine.text()==''):
             # self.statusBar.showMessage('url cannot be blank!')
             self.output_box.append('url cannot be blank!')
+            return None
         else:
             to_fetch_url = self.urlLine.text()
             local_name = self.generate_out_file()
@@ -237,7 +238,11 @@ class mainWindow(QMainWindow):
 
     def fetch_and_open_in_browsah(self):
         file_name = self.gen_and_fetch()
-        webbrowser.open(file_name)
+        if file_name is None:
+            self.output_box.append('url cannot be blank!')
+            return None
+        else:
+            webbrowser.open(file_name)
 
         
 
