@@ -4,9 +4,9 @@ a really stupid way to steal articles from paywalled news websites.
 
 it uses wget, or urllib to fetch these and then display them in your web browser. Written in Python, its a simple little gui that you paste the urls into and then it spawns them up. 
 
-[Linux standalone executable](apollo.effendi.me/web/read_the_bee)
+[Linux standalone executable](http://www.apollo.effendi.me/web/read_the_bee)
 
-[Windows .exe](apollo.effendi.me/web/read_the_bee.exe)
+[Windows .exe](http://www.apollo.effendi.me/web/read_the_bee.exe)
 
 or run `read_the_bee.py` 
 
